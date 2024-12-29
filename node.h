@@ -1,4 +1,4 @@
-#ifdef NODE_H
+NODE_H
 #define NODE_H
  
  class Node {
