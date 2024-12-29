@@ -5,7 +5,7 @@
 int main() {
     BST tree;
     int choice, value;
-
+// looping of our code
     while (true) {
         std::cout << "\n1. Insert\n2. In-Order Traversal\n3. Pre-Order Traversal\n4. Post-Order Traversal\n5. Search\n6. Delete\n7. Exit\nEnter your choice: ";
         std::cin >> choice;
