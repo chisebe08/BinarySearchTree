@@ -131,6 +131,25 @@ int height(Node* node) const {
 int height() const {
     return height(root);
 }
+// bst.h (additional code)
+int countNodes(Node* node) const {
+    if (node == nullptr) return 0;
+    return 1 + countNodes(node->left) + countNodes(node->right);
+}
+
+int countNodes() const {
+    return countNodes(root);
+}
+// bst.h (additional code)
+int countLeaves(Node* node) const {
+    if (node == nullptr) return 0;
+    if (node->left == nullptr && node->right == nullptr) return 1;
+    return countLeaves(node->left) + countLeaves(node->right);
+}
+
+int countLeaves() const {
+    return countLeaves(root);
+}
 
 
 };
