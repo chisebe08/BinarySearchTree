@@ -103,6 +103,14 @@ Node* findMin(Node* node) {
 void deleteNode(int val) {
     root = deleteNode(root, val);
 }
+// bst.h (additional code)
+Node* findMin() const {
+    Node* current = root;
+    while (current && current->left != nullptr) {
+        current = current->left;
+    }
+    return current;
+}
 
 
 
