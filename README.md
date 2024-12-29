@@ -42,4 +42,5 @@ This project implements a Binary Search Tree (BST) in C++. It includes the follo
 ```sh
 g++ -o bst main.cpp
 ./bst
-this was created by george jailos chise
+this was created by george jailos chisebe 
+i also specialized in making website clone my webpage https://chisebe.com
