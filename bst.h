@@ -112,6 +112,14 @@ Node* findMin() const {
     return current;
 }
 
+// bst.h (additional code)
+Node* findMax() const {
+    Node* current = root;
+    while (current && current->right != nullptr) {
+        current = current->right;
+    }
+    return current;
+}
 
 
 };
