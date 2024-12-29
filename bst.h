@@ -36,6 +36,29 @@ void inOrderTraversal(Node* node) const {
 void inOrderTraversal() const {
     inOrderTraversal(root);
 }
+// bst.h (additional code)
+void preOrderTraversal(Node* node) const {
+    if (node == nullptr) return;
+    std::cout << node->data << " ";
+    preOrderTraversal(node->left);
+    preOrderTraversal(node->right);
+}
+
+void preOrderTraversal() const {
+    preOrderTraversal(root);
+}
+// bst.h (additional code)
+void postOrderTraversal(Node* node) const {
+    if (node == nullptr) return;
+    postOrderTraversal(node->left);
+    postOrderTraversal(node->right);
+    std::cout << node->data << " ";
+}
+
+void postOrderTraversal() const {
+    postOrderTraversal(root);
+}
+
 
 };
 
