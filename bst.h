@@ -150,6 +150,19 @@ int countLeaves(Node* node) const {
 int countLeaves() const {
     return countLeaves(root);
 }
+// bst.h (additional code)
+void levelOrderTraversal() const {
+    if (root == nullptr) return;
+    std::queue<Node*> q;
+    q.push(root);
+    while (!q.empty()) {
+        Node* current = q.front();
+        q.pop();
+        std::cout << current->data << " ";
+        if (current->left != nullptr) q.push(current->left);
+        if (current->right != nullptr) q.push(current->right);
+    }
+}
 
 
 };
