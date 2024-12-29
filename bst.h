@@ -54,6 +54,17 @@ void postOrderTraversal(Node* node) const {
     postOrderTraversal(node->right);
     std::cout << node->data << " ";
 }
+// bst.h (additional comments)
+// Function to insert a value into the BST
+void insert(int val) {
+    insert(root, val);
+}
+
+// Function to perform in-order traversal of the BST
+void inOrderTraversal() const {
+    inOrderTraversal(root);
+}
+
 
 void postOrderTraversal() const {
     postOrderTraversal(root);
