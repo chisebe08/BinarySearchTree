@@ -58,6 +58,52 @@ void postOrderTraversal(Node* node) const {
 void postOrderTraversal() const {
     postOrderTraversal(root);
 }
+// bst.h (additional code)
+bool search(Node* node, int val) const {
+    if (node == nullptr) return false;
+    if (node->data == val) return true;
+    if (val < node->data) return search(node->left, val);
+    return search(node->right, val);
+}
+
+bool search(int val) const {
+    return search(root, val);
+}
+// bst.h (additional code)
+Node* deleteNode(Node* node, int val) {
+    if (node == nullptr) return node;
+
+    if (val < node->data) {
+        node->left = deleteNode(node->left, val);
+    } else if (val > node->data) {
+        node->right = deleteNode(node->right, val);
+    } else {
+        if (node->left == nullptr) {
+            Node* temp = node->right;
+            delete node;
+            return temp;
+        } else if (node->right == nullptr) {
+            Node* temp = node->left;
+            delete node;
+            return temp;
+        }
+
+        Node* temp = findMin(node->right);
+        node->data = temp->data;
+        node->right = deleteNode(node->right, temp->data);
+    }
+    return node;
+}
+
+Node* findMin(Node* node) {
+    while (node->left != nullptr) node = node->left;
+    return node;
+}
+
+void deleteNode(int val) {
+    root = deleteNode(root, val);
+}
+
 
 
 };
