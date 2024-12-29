@@ -120,6 +120,17 @@ Node* findMax() const {
     }
     return current;
 }
+// bst.h (additional code)
+int height(Node* node) const {
+    if (node == nullptr) return -1;
+    int leftHeight = height(node->left);
+    int rightHeight = height(node->right);
+    return 1 + std::max(leftHeight, rightHeight);
+}
+
+int height() const {
+    return height(root);
+}
 
 
 };
